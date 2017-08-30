@@ -14,21 +14,31 @@ This api is used to validate string for.
 ## How to use this api
 
 1.First create a string to be validated.
+
+
 ```java
-String s = "shivam@gmail.com";```
+String s = "shivam@gmail.com";
+```
+
 
 2.Create a object of above class for example
+
 ```java
-new EmptyValidation();```
+new EmptyValidation();
+```
 
 3.Then call validate() method and pass string in it.
+
 ```java
- new EmptyValidation.validate(s)```
+ new EmptyValidation.validate(s)
+ ```
 
  4.If you want to validate a string by multiple validator.Then you can pass object of another validator into the constructor of exsting validator for example
 
+
  ```java
- new EmptyValidation(new NullValidation()).validate();```
+ new EmptyValidation(new NullValidation()).validate();
+ ```
 
  ```java
  String s = "shivamcs0049@gmail.com";
@@ -36,6 +46,8 @@ new EmptyValidation();```
  ```
 
  6.To print status and message to can do this
+
+
  ```java
 System.out.println("Status is :"+validationResult.status());
 System.out.println("Message is :"+validationResult.message());
