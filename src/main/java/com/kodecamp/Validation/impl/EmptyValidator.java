@@ -24,9 +24,9 @@ public class EmptyValidator implements IValidator {
 
 	}
 	
-	// Copy Constructor
+	// Constructor
 	public EmptyValidator() {
-		this(null);
+		
 	}
 	
 	/**
@@ -39,7 +39,9 @@ public class EmptyValidator implements IValidator {
 	 */
 
 	public IValidationResult validate(Object object) {
-
+		
+		
+		
 		if (this.validator != null) {
 			IValidationResult vr = this.validator.validate(object);
 			if (vr.status().equals(ValidationResult.Status.FAIL)) {
@@ -47,9 +49,14 @@ public class EmptyValidator implements IValidator {
 			}
 		}
 		String value = (String) object;
-
-		return "".equals(value.trim()) ? new ValidationResult(Status.FAIL, "Object is empty.")
+		
+		return "".equals(value.trim()) ? new ValidationResult(Status.FAIL, "Value is empty.")
 				: new ValidationResult(Status.PASS);
+	}
+
+	public IValidationResult validate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -7,5 +7,6 @@ package com.kodecamp.validationapi;
 public interface IValidator {
 
 	public IValidationResult validate(Object object);
+	public IValidationResult validate();
 
 }

@@ -46,4 +46,9 @@ public class NumberValidation implements IValidator {
 
 	}
 
+	public IValidationResult validate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

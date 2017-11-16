@@ -1,30 +1,40 @@
 package com.kodecamp.Validation.impl;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.kodecamp.validationapi.IValidationResult;
 
 public class Test {
 
 	public static void main(String args[]) {
 
-		String email = "shivamgmail@com.in";
-		IValidationResult validationResult = new EmailValidation(new RangeValidation(
+		String s = "sunil kumar?";
+		String email = "shivam@gmail.com";
+		String allowedChars[] = {" ","*"};
+		/*IValidationResult validationResult = new EmailValidation(new RangeValidation(
 													new NumberValidation(
-															new SpecialCharacter(
-																	new EmptyValidator(
-																			new NullValidator()))),4,8)).validate(email);
-	
-	
+															new EmptyValidator(
+																			new NullValidator()))),4,8).validate(email);
+	*/
+
+		String fromDate = "06-06-2017";
+		String toDate = "14-11-2017";
+
+		IValidationResult validationResult = null;
+		
+//			validationResult = new DateRangeValidation(fromDate,toDate).validate();
+//			validationResult = new DateValidation().validate(fromDate);
+//			validationResult = new DateRangeValidation(new DateValidation(),fromDate,toDate).validate();
+			validationResult = new PhoneNumberValidation().validate("1234567890");
+		
+		
+		
 		System.out.println("Status : " + validationResult.status());
 		System.out.println("Message : " + validationResult.message());
 
-		/*
-		 * IValidationResult nullValidation = new NullValidator().validate(name);
-		 * if(nullValidation.status().equals(ValidationResult.Status.PASS)) {
-		 * IValidationResult vr = new EmptyValidator().validate(name);
-		 * System.out.println("Status : " + vr.status());
-		 * System.out.println("Message : " + vr.message()); } else {
-		 * System.out.println("NullValidation Failed "); }
-		 */
+	
 
 	}
 

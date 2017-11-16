@@ -19,15 +19,42 @@ import com.kodecamp.validationapi.ValidationResult.Status;
  * </tt>
  */
 public class SpecialCharacter implements IValidator {
-
+	
+	private String defaultCharSet = "[^A-Za-z0-9]";
+	
+	private String capitalLetters = "A-Z";
+	private String smallLetters = "a-z";
+	private String numbers = "0-9";
+	
 	private IValidator validator;
+	private String[] allowedSpecialCharacters ;
 
-	public SpecialCharacter(final IValidator validator) {
+	public SpecialCharacter(final IValidator validator,final String[] allowedCharacters) {
 		this.validator = validator;
+		this.allowedSpecialCharacters = allowedCharacters;
+		
+	}
+	
+	public SpecialCharacter(final String[] allowedSpecialCharacters) {
+		this(null,allowedSpecialCharacters);
+		
 	}
 
 	public SpecialCharacter() {
-		this(null);
+		this(null,null);
+		
+	}
+	
+	private String formRegexString() {
+		StringBuffer tmpString = new StringBuffer();
+		tmpString.append("[^").append(this.capitalLetters).append(this.smallLetters).append(this.numbers);
+		System.out.println(this.allowedSpecialCharacters);
+		for(String s : allowedSpecialCharacters) {
+			tmpString.append(s);
+		}
+		tmpString.append("]");
+		System.out.println(tmpString);
+		return tmpString.toString();
 	}
 
 	/**<tt>
@@ -49,11 +76,18 @@ public class SpecialCharacter implements IValidator {
 				return vr;
 			}
 		}
-		Pattern p = Pattern.compile("[^A-Za-z0-9]");
+		
+		
+		Pattern p = Pattern.compile(formRegexString());
 		Matcher m = p.matcher((CharSequence) object);
 		boolean b = m.find();
 		return b == true ? new ValidationResult(Status.FAIL, "Object contains some special Character.")
 				: new ValidationResult(Status.PASS);
+	}
+
+	public IValidationResult validate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

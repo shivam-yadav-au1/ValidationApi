@@ -42,12 +42,19 @@ public class EmailValidation implements IValidator {
 
 		Pattern p = Pattern
 				.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+				
+				
 		Matcher m = p.matcher((CharSequence) object);
 		boolean b = m.find();
 
 		return b == false ? new ValidationResult(Status.FAIL, "Email address in not valid.")
 				: new ValidationResult(Status.PASS);
 
+	}
+
+	public IValidationResult validate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

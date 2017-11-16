@@ -4,7 +4,7 @@
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/validationapi/IValidationResult.java
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/NullValidator.java
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/NumberValidation.java
-/home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/EmptyValidator.java
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/EmailValidation.java
+/home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/EmptyValidator.java
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/validationapi/IValidator.java
 /home/shivam/maven_workspace/ValidationApi/src/main/java/com/kodecamp/Validation/impl/RangeValidation.java
