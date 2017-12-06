@@ -33,7 +33,7 @@ public class DateValidation implements IValidator{
 			
 		}
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		Date date = null;
 		try {
 			

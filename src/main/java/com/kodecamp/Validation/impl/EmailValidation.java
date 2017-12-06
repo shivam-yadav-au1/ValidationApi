@@ -40,6 +40,14 @@ public class EmailValidation implements IValidator {
 	 */
 	public IValidationResult validate(Object object) {
 
+		if(this.validator != null) {
+			IValidationResult vr = this.validator.validate(object);
+			if(vr.status().equals(ValidationResult.Status.FAIL)) {
+				return vr;
+			}
+		}
+		
+		
 		Pattern p = Pattern
 				.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 				

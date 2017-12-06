@@ -55,7 +55,7 @@ public class DateRangeValidation implements IValidator {
 	
 	private boolean checkFromDate() {
 		
-		System.out.println("CheckFromDate() method is called...");
+	
 		boolean flag = false;
 		
 		IValidationResult vr = this.validator.validate(fromDate);
@@ -63,15 +63,15 @@ public class DateRangeValidation implements IValidator {
 	}
 	
 	private boolean checkToDate() {
-		System.out.println("CheckToDate() method is called....");
+		
 		boolean flag = false;
 		IValidationResult vr = this.validator.validate(toDate);
 		return flag = vr.status().equals(ValidationResult.Status.FAIL) ? false :true;
 	}
 	
 	private IValidationResult checkDate() {
-		System.out.println("Check Date is called...");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		Date from = null;
 		Date to = null;
 		try {

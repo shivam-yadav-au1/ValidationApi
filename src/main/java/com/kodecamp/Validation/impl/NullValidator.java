@@ -20,19 +20,25 @@ public class NullValidator implements IValidator {
 	 */
 	private IValidator validator;
 	
+	public NullValidator() {
+		
+	}
+	
 	public NullValidator(final IValidator validator) {
 		this.validator = validator;
 	}
 	
 	public IValidationResult validate(Object object) {
+		
+		
 
-		if(this.validator != null) {
+		/*if(this.validator != null) {
 			IValidationResult vr = this.validator.validate(object);
 				if(vr.status().equals(ValidationResult.Status.FAIL)) {
 					return vr;
 				}
 
-		}
+		}*/
 		return object == null ? new ValidationResult(ValidationResult.Status.FAIL, "Object is null")
 				: new ValidationResult(ValidationResult.Status.PASS);
 	}

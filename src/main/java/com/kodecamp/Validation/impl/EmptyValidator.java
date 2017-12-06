@@ -50,7 +50,7 @@ public class EmptyValidator implements IValidator {
 		}
 		String value = (String) object;
 		
-		return "".equals(value.trim()) ? new ValidationResult(Status.FAIL, "Value is empty.")
+		return "".equals(value.trim()) ? new ValidationResult(Status.FAIL, "Field is empty.")
 				: new ValidationResult(Status.PASS);
 	}
 
